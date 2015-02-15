@@ -97,12 +97,22 @@ class LanguagePack::Ruby < LanguagePack::Base
         create_database_yml
         install_binaries
         run_assets_precompile_rake_task
+        generate_jekyll_site
       end
       super
     end
   end
 
 private
+
+  # generate jekyll
+  def generate_jekyll_site
+    puts "Building jekyll site"
+    pipe("env PATH=$PATH bundle exec jekyll build --trace 2>&1")
+    unless $? == 0
+      error "Failed to generate site with jekyll."
+    end
+  end
 
   # the base PATH environment variable to be used
   # @return [String] the resulting PATH
