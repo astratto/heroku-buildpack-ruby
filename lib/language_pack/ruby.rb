@@ -44,6 +44,7 @@ class LanguagePack::Ruby < LanguagePack::Base
     @node_installer    = LanguagePack::NodeInstaller.new(@stack)
     @jvm_installer     = LanguagePack::JvmInstaller.new(slug_vendor_jvm, @stack)
     @graphviz_installer = LanguagePack::GraphvizInstaller.new(slug_vendor_graphviz, @stack)
+    @graphviz_installer.install
   end
 
   def name

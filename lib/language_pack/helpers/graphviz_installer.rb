@@ -12,7 +12,7 @@ class LanguagePack::GraphvizInstaller
     @fetcher = LanguagePack::Fetcher.new(GRAPHVIZ_BASE_URL, stack)
   end
 
-  def install(jruby_version, forced = false)
+  def install(forced = false)
     topic "Installing Graphviz: #{GRAPHVIZ_VERSION}"
 
     FileUtils.mkdir_p(@vendor_dir)
