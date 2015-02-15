@@ -42,6 +42,7 @@ class LanguagePack::Ruby < LanguagePack::Base
     @fetchers[:rbx]    = LanguagePack::Fetcher.new(RBX_BASE_URL, @stack)
     @node_installer    = LanguagePack::NodeInstaller.new(@stack)
     @jvm_installer     = LanguagePack::JvmInstaller.new(slug_vendor_jvm, @stack)
+    @graphviz_installer = LanguagePack::GraphvizInstaller.new(slug_vendor_graphviz, @stack)
   end
 
   def name
@@ -855,5 +856,9 @@ params = CGI.parse(uri.query || "")
       # need to reinstall language pack gems
       install_bundler_in_app
     end
+  end
+
+  def slug_vendor_graphviz
+    "vendor/graphviz"
   end
 end
