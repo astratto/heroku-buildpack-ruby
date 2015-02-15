@@ -9,7 +9,7 @@ class LanguagePack::GraphvizInstaller
   def initialize(slug_vendor_graphviz, stack)
     @vendor_dir = slug_vendor_graphviz
     @stack = stack
-    @fetcher = LanguagePack::Fetcher.new(GRAPHVIZ_BASE_URL, stack)
+    @fetcher = LanguagePack::Fetcher.new(GRAPHVIZ_BASE_URL)
   end
 
   def install(forced = false)
