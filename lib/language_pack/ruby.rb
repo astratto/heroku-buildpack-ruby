@@ -7,6 +7,7 @@ require "language_pack/base"
 require "language_pack/ruby_version"
 require "language_pack/helpers/node_installer"
 require "language_pack/helpers/jvm_installer"
+require "language_pack/helpers/graphviz_installer"
 require "language_pack/version"
 
 # base Ruby Language Pack. This is for any base ruby app.
